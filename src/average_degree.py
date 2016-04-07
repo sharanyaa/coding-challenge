@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 
-import os.path
-import json
-from itertools import combinations
 import sys
-import os.path
+from os.path import isfile
+from json import loads
+from itertools import combinations
 from collections import OrderedDict
-import time
+from time import mktime, strptime
 
 class Graph:
     ''' Graph class is implemented as a dictionary with vertices as keys and a list of neighbor nodes as value's '''
@@ -127,7 +126,6 @@ class Graph:
 oldest_ts = None
 tweet_graph = Graph()
 tweet_dict = {}
-print ("TWEET INPUT: tweet_input/tweets.txt, OUTPUT: tweet_output/output.txt")
 
 def main ():
     global oldest_ts
@@ -146,17 +144,18 @@ def main ():
     opfile = open(sys.argv[2], "w+")
     newest_ts = None
     # Reads input file and writes feauture 1 into output file as specified in cmd arguments
-    if (os.path.isfile(sys.argv[1])):
+    if (isfile(sys.argv[1])):
         ipfile = open(sys.argv[1], "r")
     else:
         # Terminates if input file path is invalid
         print("Invalid input path: ", sys.argv[1])
         exit(0)
+    print ("TWEET INPUT: {0}, OUTPUT: {1}".format(sys.argv[1],sys.argv[2]))
     for line in ipfile:
-        parsed_json = json.loads(line)
+        parsed_json = loads(line)
         if "entities" and "created_at" in parsed_json:
             timestamp = parsed_json["created_at"]
-            newest_ts = (time.mktime(time.strptime(timestamp, "%a %b %d %H:%M:%S +0000 %Y")))
+            newest_ts = (mktime(strptime(timestamp, "%a %b %d %H:%M:%S +0000 %Y")))
             hashtags = []
             tags = parsed_json["entities"]["hashtags"]
             for hashtag in tags:
@@ -187,7 +186,7 @@ def main ():
             #print ("\n", tweet_graph.print_graph(), tweet_graph)
             s += (tweet_graph.calc_avg_degree()) + "\n"
 
-    #print (s)
+    print (s)
     opfile.write(s)
     # for k in tweet_dict:
     # print (k, " ", tweet_dict[k])
