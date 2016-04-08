@@ -100,8 +100,12 @@ class Graph:
         for v in self.__graph_dict:
             n += 1
             deg += len(self.__graph_dict[v])
+        try:
             f = deg / n
-            x = "%.3f" % f
+        except:
+            f = 0.000
+        x = "%.3f" % f
+        #print(f, x)
         return x[0:-1]
 
 # Global Variables
@@ -121,7 +125,9 @@ def process_input_file(ipfile):
     s = ""
     for line in ipfile:
         parsed_json = loads (line)
-        if "entities" and "created_at" in parsed_json:
+        # If entities is present, it's a tweet;
+        # Else, it's a rate limit message which is ignored and no changes are made to the hashtag graph or average degree
+        if "entities" in parsed_json and "created_at" in parsed_json:
             # Parse the tweets and timestamp from the input file
             timestamp = parsed_json["created_at"]
             newest_ts = (mktime (strptime (timestamp, "%a %b %d %H:%M:%S +0000 %Y")))
@@ -133,29 +139,31 @@ def process_input_file(ipfile):
             # Append the new_edges to tweet_dict using the timestamp as key.
             if newest_ts >= oldest_ts:
                 hashtags = []
-                tags = parsed_json["entities"]["hashtags"]
-                for hashtag in tags:
-                    hashtags.append (hashtag["text"])
-                hashtags = set (hashtags)
-                new_edges = []
-                for hashtag in hashtags:
-                    new_edges = list (combinations (hashtags, 2))
-                try:
-                    tweet_dict[newest_ts].extend (new_edges)
-                except:
-                    tweet_dict[newest_ts] = new_edges
-                # Remove the old hashtags in the hashtag graph;
-                # Sort tweet_dict in increasing order of timestamps;
-                # Remove the disconnected nodes in the graph and add the new_edges to the graph
-                tweet_graph.evict_old_hashtags ()
-                tweet_dict = OrderedDict (sorted (tweet_dict.items ()))
-                tweet_graph.remove_disconnected_nodes ()
-                if newest_ts - oldest_ts < 60:
-                    for edge in new_edges:
-                        tweet_graph.add_edge (edge)
+                if "hashtags" in parsed_json["entities"]:
+                    tags = parsed_json["entities"]["hashtags"]
+                    for hashtag in tags:
+                        if "text" in hashtag:
+                            hashtags.append (hashtag["text"])
+                    hashtags = set (hashtags)
+                    new_edges = []
+                    for hashtag in hashtags:
+                        new_edges = list (combinations (hashtags, 2))
+                    try:
+                        tweet_dict[newest_ts].extend (new_edges)
+                    except:
+                        tweet_dict[newest_ts] = new_edges
+                    # Remove the old hashtags in the hashtag graph;
+                    # Sort tweet_dict in increasing order of timestamps;
+                    # Remove the disconnected nodes in the graph and add the new_edges to the graph
+                    tweet_graph.evict_old_hashtags ()
+                    tweet_dict = OrderedDict (sorted (tweet_dict.items ()))
+                    tweet_graph.remove_disconnected_nodes ()
+                    if newest_ts - oldest_ts < 60:
+                        for edge in new_edges:
+                            tweet_graph.add_edge (edge)
             # Finally append a formatted string of the average degree of the graph to an output string.
             s += (tweet_graph.calc_avg_degree ()) + "\n"
-            print (tweet_graph)
+            #print (tweet_graph, "\n")
     return s
 
 def main ():
@@ -172,7 +180,7 @@ def main ():
     print ("TWEET INPUT: {0}, OUTPUT: {1}".format (sys.argv[1], sys.argv[2]))
     # Call process_input_file and write the output string into the output file.
     output_string = process_input_file(ipfile)
-    print (output_string)
+    #print (output_string)
     opfile.write(output_string)
     ipfile.close()
     opfile.close()
