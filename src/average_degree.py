@@ -13,6 +13,9 @@ class Graph:
         ''' Constructor takes a dictionary as argument. '''
         self.__graph_dict = graph_dict
 
+    def __str__ (self):
+        return str(self.__graph_dict)
+
     def add_edge (self, edge):
         """ edge is of type set, tuple or list;
         Method creates a new list or appends to the list of neighbor nodes for the corresponding vertices
@@ -152,6 +155,7 @@ def process_input_file(ipfile):
                         tweet_graph.add_edge (edge)
             # Finally append a formatted string of the average degree of the graph to an output string.
             s += (tweet_graph.calc_avg_degree ()) + "\n"
+            print (tweet_graph)
     return s
 
 def main ():
