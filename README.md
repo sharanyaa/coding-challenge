@@ -3,7 +3,9 @@ Insight Data Engineering - Coding Challenge
 Submitted by: SHARANYA RADHAMOHAN
 ===========================================================
 Email: radhamoh@usc.edu
+
 Language/Environment: Python 3
+
 Libraries: Standard Python libraries (sys, path, json, itertools, collections, time)
 
 src/average_degree.py:
@@ -11,8 +13,7 @@ src/average_degree.py:
 
 run.sh:
 - Executes average_degree.py using input file and writes into output file
-- Executes unittests_average_degree.py to run unittests on different units of the program
-- Change permissions of the script to allow execution
+- Change permissions of the script, if required, to allow execution
 - Run the script as ./run.sh from the root directory
 
 TO RUN average_degree.py: python3 src/average_degree.py INPUT_FILE_PATH OUTPUT_FILE_PATH

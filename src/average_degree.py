@@ -14,38 +14,6 @@ class Graph:
         # and assigns it to the underlying dict of the class
         self.__graph_dict = graph_dict
 
-    def generate_vertices (self):
-        # Returns a list of connected vertices in the graph
-        return list(self.__graph_dict.keys())
-
-    def generate_edges (self):
-        """ A static method generating the edges of the
-            graph "graph". Edges are represented as sets
-            with one (a loop back to the vertex) or two
-            vertices
-        """
-        edges = []
-        for vertex in self.__graph_dict:
-            for neighbour in self.__graph_dict[vertex]:
-                if {neighbour, vertex} not in edges:
-                    edges.append({vertex, neighbour})
-        return edges
-
-    # Used for debugging
-    def print_graph(self):
-        # Prints the underlying dict of the class
-        return (self.__graph_dict)
-
-    def __str__ (self):
-        # Prints a list of vertices and edges in the graph
-        s = "V: "
-        for vertex in self.generate_vertices():
-            s += str(vertex) + " "
-        s += "\nE: "
-        for edge in self.generate_edges():
-            s += str(edge) + " "
-        return s
-
     def add_edge (self, edge):
         """ assumes that edge is of type set, tuple or list;
             between two vertices can be multiple edges!
@@ -215,7 +183,5 @@ def main ():
     ipfile.close()
     opfile.close()
 
-
-# Execution starts here
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
