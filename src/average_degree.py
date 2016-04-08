@@ -62,21 +62,32 @@ class Graph:
             self.__graph_dict[vertex2].append(vertex1)
         else:
             self.__graph_dict[vertex2] = [vertex1]
+        self.__graph_dict[vertex1] = list(set (self.__graph_dict[vertex1]))
+        self.__graph_dict[vertex2] = list(set (self.__graph_dict[vertex2]))
 
     def remove_edge(self, edge):
-        edge = set(edge)
-        v1 = edge.pop()
-        if edge:
-            v2 = edge.pop()
+        global tweet_dict
         #print (v1, v2)
-        try:
-            if self.__graph_dict:
-                if v1 in self.__graph_dict:
-                    self.__graph_dict[v1].remove(v2)
-                if v2 in self.__graph_dict:
-                    self.__graph_dict[v2].remove(v1)
-        except:
-            pass
+        #print ("xxx: ")
+        flag = True
+        for lst in tweet_dict.values():
+            #print (lst, edge)
+            if edge in lst:
+                flag = False
+        #if list(edge) not in [x for lst in list(tweet_dict.values()) for x in lst]:
+        if flag:
+            edge = set(edge)
+            v1 = edge.pop()
+            if edge:
+                v2 = edge.pop()
+            try:
+                if self.__graph_dict:
+                    if v1 in self.__graph_dict:
+                        self.__graph_dict[v1].remove(v2)
+                    if v2 in self.__graph_dict:
+                        self.__graph_dict[v2].remove(v1)
+            except:
+                pass
 
     def evict_old_hashtags(self):
         global oldest_ts
@@ -98,6 +109,7 @@ class Graph:
             else:
                  continue
         #print (timestamp, oldest_ts, "\tedges_remove: "+str(edges_to_remove))
+        #print (tweet_dict)
         for edge in edges_to_remove:
             #print (edge)
             self.remove_edge(edge)
@@ -120,7 +132,7 @@ class Graph:
             deg += len(self.__graph_dict[v])
             f = deg / n
             x = "%.3f" % f
-        #print (f, x)
+        #print (deg, x)
         return x[0:-1]
 
 oldest_ts = None
@@ -151,46 +163,53 @@ def main ():
         print("Invalid input path: ", sys.argv[1])
         exit(0)
     print ("TWEET INPUT: {0}, OUTPUT: {1}".format(sys.argv[1],sys.argv[2]))
+    tweetnum = 0
     for line in ipfile:
         parsed_json = loads(line)
         if "entities" and "created_at" in parsed_json:
             timestamp = parsed_json["created_at"]
             newest_ts = (mktime(strptime(timestamp, "%a %b %d %H:%M:%S +0000 %Y")))
-            hashtags = []
-            tags = parsed_json["entities"]["hashtags"]
-            for hashtag in tags:
-                #text += hashtag["text"] + " "
-                hashtags.append(hashtag["text"])
-            hashtags = set(hashtags)
-            new_edges = []
-            for hashtag in hashtags:
-                new_edges = list(combinations(hashtags, 2))
-            try:
-                tweet_dict[newest_ts].extend(new_edges)
-            except:
-                tweet_dict[newest_ts] = new_edges
-            tweet_dict = OrderedDict(sorted(tweet_dict.items()))
-
-            #print ("\n"+str(hashtags)+" "+timestamp+"\n============================")
-            #s += text + "\tcreated_at: " + timestamp + "\n"
-
             if oldest_ts == None:
                 oldest_ts = newest_ts
-            #print (oldest_ts, newest_ts)
-            #print ("\t\tnew edges: " + str(new_edges))
-            if newest_ts - oldest_ts < 60:
-                for edge in new_edges:
-                    tweet_graph.add_edge(edge)
-            tweet_graph.evict_old_hashtags()
-            tweet_graph.remove_disconnected_nodes()
-            #print ("\n", tweet_graph.print_graph(), tweet_graph)
+            tweetnum+=1
+            #print ("tweet num: ",tweetnum,"oldest ts: ", oldest_ts,"newest ts: ", newest_ts, "newest - oldest: ", newest_ts - oldest_ts)
+            #if newest_ts - oldest_ts < 60:
+            if newest_ts >= oldest_ts:
+                hashtags = []
+                tags = parsed_json["entities"]["hashtags"]
+                for hashtag in tags:
+                    #text += hashtag["text"] + " "
+                    hashtags.append(hashtag["text"])
+                hashtags = set(hashtags)
+                new_edges = []
+                for hashtag in hashtags:
+                    new_edges = list(combinations(hashtags, 2))
+                try:
+                    tweet_dict[newest_ts].extend(new_edges)
+                except:
+                    tweet_dict[newest_ts] = new_edges
+                tweet_graph.evict_old_hashtags()
+                tweet_dict = OrderedDict(sorted(tweet_dict.items()))
+                tweet_graph.remove_disconnected_nodes()
+                if newest_ts - oldest_ts < 60:
+                    for edge in new_edges:
+                        tweet_graph.add_edge(edge)
+            #print (tweet_graph.print_graph(), "new edges: ", new_edges)
+            #print ("\tavg degree: ", tweet_graph.calc_avg_degree(), "\n", tweet_graph)
+            #print ("\n============================")
             s += (tweet_graph.calc_avg_degree()) + "\n"
+
+            #print ("\n", tweet_graph.print_graph(), tweet_graph)
+            # print ("\n"+str(hashtags)+" "+timestamp+"\n============================")
+            # s += text + "\tcreated_at: " + timestamp + "\n"
+            # print (oldest_ts, newest_ts)
+            # print ("\t\tnew edges: " + str(new_edges))
 
     print (s)
     opfile.write(s)
     # for k in tweet_dict:
     # print (k, " ", tweet_dict[k])
-
+    #print (tweet_dict)
     #print (tweet_graph)
     #print (tweet_graph.generate_edges())
     ipfile.close()
