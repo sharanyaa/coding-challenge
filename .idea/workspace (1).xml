@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1793d502-4d20-4f2b-9323-38ea0787140d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/average_degree.py" afterPath="$PROJECT_DIR$/src/average_degree.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tweet_output/output.txt" afterPath="$PROJECT_DIR$/tweet_output/output.txt" />
-    </list>
+    <list default="true" id="1793d502-4d20-4f2b-9323-38ea0787140d" name="Default" comment="" />
     <ignored path="insight-coding-challenge-april16.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,60 +20,72 @@
     <favorites_list name="insight-coding-challenge-april16" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="average_degree.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/average_degree.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="176" column="10" selection-start-line="176" selection-start-column="10" selection-end-line="176" selection-end-column="10" />
-              <folding>
-                <element signature="e#20#30#0" expanded="true" />
-                <element signature="e#204#3541#0" expanded="false" />
-                <element signature="e#366#456#0" expanded="true" />
-                <element signature="e#497#1318#0" expanded="true" />
-                <element signature="e#1361#2172#0" expanded="true" />
-                <element signature="e#1466#1533#0" expanded="true" />
-                <element signature="e#2216#2868#0" expanded="true" />
-                <element signature="e#2919#3189#0" expanded="true" />
-                <element signature="e#3231#3539#0" expanded="true" />
-                <element signature="e#4587#4671#0" expanded="true" />
-                <element signature="e#5431#5478#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tweets.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tweets.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <splitter split-orientation="vertical" split-proportion="0.6480263">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="run.sh" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/run.sh">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="average_degree.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/average_degree.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="158">
+                  <caret line="184" column="50" selection-start-line="184" selection-start-column="50" selection-end-line="184" selection-end-column="50" />
+                  <folding>
+                    <element signature="e#20#30#0" expanded="true" />
+                    <element signature="e#1243#1319#0" expanded="true" />
+                    <element signature="e#1659#2185#0" expanded="true" />
+                    <element signature="e#2228#2611#0" expanded="true" />
+                    <element signature="e#2655#3549#0" expanded="true" />
+                    <element signature="e#3600#3757#0" expanded="true" />
+                    <element signature="e#3799#4108#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="tweets.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/tweets.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="tweets.json" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/tweets.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="135">
+                  <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/tweets.py" />
+        <option value="$PROJECT_DIR$/run.sh" />
         <option value="$PROJECT_DIR$/src/tweets.input" />
         <option value="$PROJECT_DIR$/src/tweets.json" />
-        <option value="$PROJECT_DIR$/src/unittests_average_degree.py" />
-        <option value="$PROJECT_DIR$/run.sh" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/average_degree.py" />
       </list>
     </option>
@@ -112,47 +120,14 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insight-coding-challenge-april16" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insight-coding-challenge-april16" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insight-coding-challenge-april16" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insight-coding-challenge-april16" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insight-coding-challenge-april16" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane />
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/insight_coding_challenge-master/tweet_input/tweets.txt" />
     <property name="FullScreen" value="true" />
   </component>
   <component name="RunManager">
@@ -322,13 +297,13 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12684989" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2525338" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24158654" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24565756" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -336,7 +311,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -357,120 +332,69 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/src/average_degree.py</url>
-          <line>15</line>
-          <option name="timeStamp" value="6" />
+          <line>34</line>
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/src/average_degree.py</url>
+          <line>176</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/src/average_degree.py</url>
+          <line>165</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="11" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/average_degree.py">
+    <entry file="file://$PROJECT_DIR$/run.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#20#30#0" expanded="true" />
-            <element signature="e#204#3541#0" expanded="false" />
-            <element signature="e#366#456#0" expanded="true" />
-            <element signature="e#497#1318#0" expanded="true" />
-            <element signature="e#1361#2172#0" expanded="true" />
-            <element signature="e#1466#1533#0" expanded="true" />
-            <element signature="e#2216#2868#0" expanded="true" />
-            <element signature="e#2919#3189#0" expanded="true" />
-            <element signature="e#3231#3539#0" expanded="true" />
-            <element signature="e#4587#4671#0" expanded="true" />
-            <element signature="e#5431#5478#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tweets.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="60">
+          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run.sh">
+    <entry file="file://$PROJECT_DIR$/src/average_degree.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/average_degree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2685">
-          <caret line="186" column="10" selection-start-line="186" selection-start-column="10" selection-end-line="186" selection-end-column="10" />
           <folding>
             <element signature="e#20#30#0" expanded="true" />
-            <element signature="e#204#3541#0" expanded="false" />
-            <element signature="e#366#456#0" expanded="true" />
-            <element signature="e#497#1318#0" expanded="true" />
-            <element signature="e#1361#2172#0" expanded="true" />
-            <element signature="e#1466#1533#0" expanded="true" />
-            <element signature="e#2216#2868#0" expanded="true" />
-            <element signature="e#2919#3189#0" expanded="true" />
-            <element signature="e#3231#3539#0" expanded="true" />
-            <element signature="e#4587#4671#0" expanded="true" />
-            <element signature="e#5431#5478#0" expanded="true" />
+            <element signature="e#1243#1319#0" expanded="true" />
+            <element signature="e#1659#2185#0" expanded="true" />
+            <element signature="e#2228#2611#0" expanded="true" />
+            <element signature="e#2655#3549#0" expanded="true" />
+            <element signature="e#3600#3757#0" expanded="true" />
+            <element signature="e#3799#4108#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/unittests_average_degree.py" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tweets.json">
+    <entry file="file://$PROJECT_DIR$/run.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="60">
+          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/average_degree.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2685">
-          <caret line="186" column="10" selection-start-line="186" selection-start-column="10" selection-end-line="186" selection-end-column="10" />
-          <folding>
-            <element signature="e#20#30#0" expanded="true" />
-            <element signature="e#204#3541#0" expanded="false" />
-            <element signature="e#366#456#0" expanded="true" />
-            <element signature="e#497#1318#0" expanded="true" />
-            <element signature="e#1361#2172#0" expanded="true" />
-            <element signature="e#1466#1533#0" expanded="true" />
-            <element signature="e#2216#2868#0" expanded="true" />
-            <element signature="e#2919#3189#0" expanded="true" />
-            <element signature="e#3231#3539#0" expanded="true" />
-            <element signature="e#4587#4671#0" expanded="true" />
-            <element signature="e#5431#5478#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run.sh">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#20#30#0" expanded="true" />
+            <element signature="e#1243#1319#0" expanded="true" />
+            <element signature="e#1659#2185#0" expanded="true" />
+            <element signature="e#2228#2611#0" expanded="true" />
+            <element signature="e#2655#3549#0" expanded="true" />
+            <element signature="e#3600#3757#0" expanded="true" />
+            <element signature="e#3799#4108#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -478,114 +402,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/average_degree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2310">
-          <caret line="184" column="50" selection-start-line="184" selection-start-column="50" selection-end-line="184" selection-end-column="50" />
-          <folding>
-            <element signature="e#20#30#0" expanded="true" />
-            <element signature="e#204#3541#0" expanded="false" />
-            <element signature="e#366#456#0" expanded="true" />
-            <element signature="e#497#1318#0" expanded="true" />
-            <element signature="e#1361#2172#0" expanded="true" />
-            <element signature="e#1466#1533#0" expanded="true" />
-            <element signature="e#2216#2868#0" expanded="true" />
-            <element signature="e#2919#3189#0" expanded="true" />
-            <element signature="e#3231#3539#0" expanded="true" />
-            <element signature="e#4587#4671#0" expanded="true" />
-            <element signature="e#5431#5478#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tweets.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/average_degree.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#20#30#0" expanded="true" />
-            <element signature="e#204#3541#0" expanded="false" />
-            <element signature="e#366#456#0" expanded="true" />
-            <element signature="e#497#1318#0" expanded="true" />
-            <element signature="e#1361#2172#0" expanded="true" />
-            <element signature="e#1466#1533#0" expanded="true" />
-            <element signature="e#2216#2868#0" expanded="true" />
-            <element signature="e#2919#3189#0" expanded="true" />
-            <element signature="e#3231#3539#0" expanded="true" />
-            <element signature="e#4587#4671#0" expanded="true" />
-            <element signature="e#5431#5478#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/average_degree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#20#30#0" expanded="true" />
-            <element signature="e#204#3541#0" expanded="false" />
-            <element signature="e#366#456#0" expanded="true" />
-            <element signature="e#497#1318#0" expanded="true" />
-            <element signature="e#1361#2172#0" expanded="true" />
-            <element signature="e#1466#1533#0" expanded="true" />
-            <element signature="e#2216#2868#0" expanded="true" />
-            <element signature="e#2919#3189#0" expanded="true" />
-            <element signature="e#3231#3539#0" expanded="true" />
-            <element signature="e#4587#4671#0" expanded="true" />
-            <element signature="e#5431#5478#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/average_degree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#20#30#0" expanded="true" />
-            <element signature="e#204#3541#0" expanded="false" />
-            <element signature="e#366#456#0" expanded="true" />
-            <element signature="e#497#1318#0" expanded="true" />
-            <element signature="e#1361#2172#0" expanded="true" />
-            <element signature="e#1466#1533#0" expanded="true" />
-            <element signature="e#2216#2868#0" expanded="true" />
-            <element signature="e#2919#3189#0" expanded="true" />
-            <element signature="e#3231#3539#0" expanded="true" />
-            <element signature="e#4587#4671#0" expanded="true" />
-            <element signature="e#5431#5478#0" expanded="true" />
+            <element signature="e#1243#1319#0" expanded="true" />
+            <element signature="e#1659#2185#0" expanded="true" />
+            <element signature="e#2228#2611#0" expanded="true" />
+            <element signature="e#2655#3549#0" expanded="true" />
+            <element signature="e#3600#3757#0" expanded="true" />
+            <element signature="e#3799#4108#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -594,6 +426,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -603,16 +436,12 @@
           <caret line="149" column="46" selection-start-line="149" selection-start-column="46" selection-end-line="149" selection-end-column="46" />
           <folding>
             <element signature="e#20#30#0" expanded="true" />
-            <element signature="e#204#3541#0" expanded="false" />
-            <element signature="e#366#456#0" expanded="true" />
-            <element signature="e#497#1318#0" expanded="true" />
-            <element signature="e#1361#2172#0" expanded="true" />
-            <element signature="e#1466#1533#0" expanded="true" />
-            <element signature="e#2216#2868#0" expanded="true" />
-            <element signature="e#2919#3189#0" expanded="true" />
-            <element signature="e#3231#3539#0" expanded="true" />
-            <element signature="e#4587#4671#0" expanded="true" />
-            <element signature="e#5431#5478#0" expanded="true" />
+            <element signature="e#1243#1319#0" expanded="true" />
+            <element signature="e#1659#2185#0" expanded="true" />
+            <element signature="e#2228#2611#0" expanded="true" />
+            <element signature="e#2655#3549#0" expanded="true" />
+            <element signature="e#3600#3757#0" expanded="true" />
+            <element signature="e#3799#4108#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -622,6 +451,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -631,16 +461,12 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#20#30#0" expanded="true" />
-            <element signature="e#204#3541#0" expanded="false" />
-            <element signature="e#366#456#0" expanded="true" />
-            <element signature="e#497#1318#0" expanded="true" />
-            <element signature="e#1361#2172#0" expanded="true" />
-            <element signature="e#1466#1533#0" expanded="true" />
-            <element signature="e#2216#2868#0" expanded="true" />
-            <element signature="e#2919#3189#0" expanded="true" />
-            <element signature="e#3231#3539#0" expanded="true" />
-            <element signature="e#4587#4671#0" expanded="true" />
-            <element signature="e#5431#5478#0" expanded="true" />
+            <element signature="e#1243#1319#0" expanded="true" />
+            <element signature="e#1659#2185#0" expanded="true" />
+            <element signature="e#2228#2611#0" expanded="true" />
+            <element signature="e#2655#3549#0" expanded="true" />
+            <element signature="e#3600#3757#0" expanded="true" />
+            <element signature="e#3799#4108#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -650,6 +476,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -659,16 +486,12 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#20#30#0" expanded="true" />
-            <element signature="e#204#3541#0" expanded="false" />
-            <element signature="e#366#456#0" expanded="true" />
-            <element signature="e#497#1318#0" expanded="true" />
-            <element signature="e#1361#2172#0" expanded="true" />
-            <element signature="e#1466#1533#0" expanded="true" />
-            <element signature="e#2216#2868#0" expanded="true" />
-            <element signature="e#2919#3189#0" expanded="true" />
-            <element signature="e#3231#3539#0" expanded="true" />
-            <element signature="e#4587#4671#0" expanded="true" />
-            <element signature="e#5431#5478#0" expanded="true" />
+            <element signature="e#1243#1319#0" expanded="true" />
+            <element signature="e#1659#2185#0" expanded="true" />
+            <element signature="e#2228#2611#0" expanded="true" />
+            <element signature="e#2655#3549#0" expanded="true" />
+            <element signature="e#3600#3757#0" expanded="true" />
+            <element signature="e#3799#4108#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -678,6 +501,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -687,28 +511,37 @@
           <caret line="58" column="59" selection-start-line="58" selection-start-column="59" selection-end-line="58" selection-end-column="59" />
           <folding>
             <element signature="e#20#30#0" expanded="true" />
-            <element signature="e#204#3541#0" expanded="false" />
-            <element signature="e#366#456#0" expanded="true" />
-            <element signature="e#497#1318#0" expanded="true" />
-            <element signature="e#1361#2172#0" expanded="true" />
-            <element signature="e#1466#1533#0" expanded="true" />
-            <element signature="e#2216#2868#0" expanded="true" />
-            <element signature="e#2919#3189#0" expanded="true" />
-            <element signature="e#3231#3539#0" expanded="true" />
-            <element signature="e#4587#4671#0" expanded="true" />
-            <element signature="e#5431#5478#0" expanded="true" />
+            <element signature="e#1243#1319#0" expanded="true" />
+            <element signature="e#1659#2185#0" expanded="true" />
+            <element signature="e#2228#2611#0" expanded="true" />
+            <element signature="e#2655#3549#0" expanded="true" />
+            <element signature="e#3600#3757#0" expanded="true" />
+            <element signature="e#3799#4108#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tweets.input" />
     <entry file="file://$PROJECT_DIR$/src/tweets.py" />
-    <entry file="file://$USER_HOME$/Downloads/insight_coding_challenge-master/tweet_input/tweets.txt" />
+    <entry file="file://$USER_HOME$/Downloads/insight_coding_challenge-master/tweet_input/tweets.txt">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/tweets.input" />
+    <entry file="file://$PROJECT_DIR$/run.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tweet_output/output.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="9295" column="0" selection-start-line="9295" selection-start-column="0" selection-end-line="9295" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -716,35 +549,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/unittests_average_degree.py" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="120">
-            <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tweets.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
+        <state relative-caret-position="255">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
@@ -752,38 +563,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/average_degree.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="176" column="10" selection-start-line="176" selection-start-column="10" selection-end-line="176" selection-end-column="10" />
+        <state relative-caret-position="158">
+          <caret line="184" column="50" selection-start-line="184" selection-start-column="50" selection-end-line="184" selection-end-column="50" />
           <folding>
             <element signature="e#20#30#0" expanded="true" />
-            <element signature="e#204#3541#0" expanded="false" />
-            <element signature="e#366#456#0" expanded="true" />
-            <element signature="e#497#1318#0" expanded="true" />
-            <element signature="e#1361#2172#0" expanded="true" />
-            <element signature="e#1466#1533#0" expanded="true" />
-            <element signature="e#2216#2868#0" expanded="true" />
-            <element signature="e#2919#3189#0" expanded="true" />
-            <element signature="e#3231#3539#0" expanded="true" />
-            <element signature="e#4587#4671#0" expanded="true" />
-            <element signature="e#5431#5478#0" expanded="true" />
+            <element signature="e#1243#1319#0" expanded="true" />
+            <element signature="e#1659#2185#0" expanded="true" />
+            <element signature="e#2228#2611#0" expanded="true" />
+            <element signature="e#2655#3549#0" expanded="true" />
+            <element signature="e#3600#3757#0" expanded="true" />
+            <element signature="e#3799#4108#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ScopeChooserConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

@@ -8,17 +8,15 @@ from collections import OrderedDict
 from time import mktime, strptime
 
 class Graph:
-    ''' Graph class is implemented as a dictionary with vertices as keys and a list of neighbor nodes as value's '''
+    ''' Graph class is implemented as a dictionary with vertices as keys and a list of neighbor nodes as values '''
     def __init__ (self, graph_dict = {}):
-        # Constructor takes a dictionary as argument, builds a dictionary without disconnected vertices
-        # and assigns it to the underlying dict of the class
+        ''' Constructor takes a dictionary as argument. '''
         self.__graph_dict = graph_dict
 
     def add_edge (self, edge):
-        """ assumes that edge is of type set, tuple or list;
-            between two vertices can be multiple edges!
+        """ edge is of type set, tuple or list;
+        Method creates a new list or appends to the list of neighbor nodes for the corresponding vertices
         """
-
         edge = set(edge)
         vertex1 = edge.pop()
         vertex2 = edge.pop()
@@ -30,19 +28,21 @@ class Graph:
             self.__graph_dict[vertex2].append(vertex1)
         else:
             self.__graph_dict[vertex2] = [vertex1]
+        # Removes duplicates in the list of neighbor nodes to remove duplicate edges in the hashtag graph.
         self.__graph_dict[vertex1] = list(set (self.__graph_dict[vertex1]))
         self.__graph_dict[vertex2] = list(set (self.__graph_dict[vertex2]))
 
     def remove_edge(self, edge):
+        '''
+        Method removes an edge from the hashtag graph.
+        '''
         global tweet_dict
-        #print (v1, v2)
-        #print ("xxx: ")
+        # Check if edge is formed by another tweet in the 60 second window.
+        # If flag is True, edge can be deleted, if flag is False, do no delete the edge.
         flag = True
         for lst in tweet_dict.values():
-            #print (lst, edge)
             if edge in lst:
                 flag = False
-        #if list(edge) not in [x for lst in list(tweet_dict.values()) for x in lst]:
         if flag:
             edge = set(edge)
             v1 = edge.pop()
@@ -58,40 +58,39 @@ class Graph:
                 pass
 
     def evict_old_hashtags(self):
+        '''
+        Method removes old hashtags, with a timestamp older the oldest timestamp in the graph;
+        '''
         global oldest_ts
         global tweet_dict
         edges_to_remove = []
         keys = (list(tweet_dict.keys()))
         index = 0
-        old_timestamps = []
         while index < len(keys):
             timestamp = keys[index]
-            #print (timestamp,"\n"+ str(tweet_dict))
             index += 1
             if timestamp - oldest_ts > 60:
-                #print (list(tweet_dict)[0])
                 edges_to_remove.extend(tweet_dict[oldest_ts])
-                #old_timestamps.append(oldest_ts)
                 del tweet_dict[oldest_ts]
                 oldest_ts = list(tweet_dict)[0]
             else:
                  continue
-        #print (timestamp, oldest_ts, "\tedges_remove: "+str(edges_to_remove))
-        #print (tweet_dict)
         for edge in edges_to_remove:
-            #print (edge)
             self.remove_edge(edge)
-       # for ts in old_timestamps:
-        #    del tweet_dict[ts]
 
     def remove_disconnected_nodes(self):
+        '''
+        Method removes disconnected nodes by finding vertices with no neighboring nodes.
+        '''
         keys = list(self.__graph_dict.keys())
         for vertex in keys:
             if not self.__graph_dict[vertex]:
                 del self.__graph_dict[vertex]
 
     def calc_avg_degree (self):
-        # Returns a formatted string of the average degree of the graph
+        '''
+        Returns a formatted string of the average degree of the graph
+        '''
         n = 0
         deg = 0
         x = "0.00"
@@ -100,86 +99,77 @@ class Graph:
             deg += len(self.__graph_dict[v])
             f = deg / n
             x = "%.3f" % f
-        #print (deg, x)
         return x[0:-1]
 
-oldest_ts = None
-tweet_graph = Graph()
-tweet_dict = {}
+# Global Variables
+oldest_ts = None # Oldest timestamp in the 60 second window
+tweet_graph = Graph() # the twitter hashatg graph
+tweet_dict = {} # The tweet_dict dictionary associates edges with the timestamp when they were created;
+                # The dictionary is stored in sorted order of keys, which are timestamps.
 
-def main ():
+def process_input_file(ipfile):
+    '''
+    Function takes an input file path as parameter, processes the tweets,
+    constructs an output string to be written into an output file and return the string.
+    '''
     global oldest_ts
     global tweet_graph
     global tweet_dict
-
     s = ""
-    text = ""
-    #tweet_graph = Graph({"d": ["f"], 2: ["d"], 3: ["f", "d"]})
-    #print (tweet_graph.print_graph())
-    #tweet_graph.remove_edge({"d", "f"})
-    #print (tweet_graph.print_graph())
-    #tweet_graph.remove_disconnected_nodes()
-    #print (tweet_graph.print_graph())
+    for line in ipfile:
+        parsed_json = loads (line)
+        if "entities" and "created_at" in parsed_json:
+            # Parse the tweets and timestamp from the input file
+            timestamp = parsed_json["created_at"]
+            newest_ts = (mktime (strptime (timestamp, "%a %b %d %H:%M:%S +0000 %Y")))
+            # For the first tweet:
+            if oldest_ts == None:
+                oldest_ts = newest_ts
+            # We ignore all tweets that are older than the oldest tweet in the 60 second window;
+            # Otherwise, determine the possible edges produced by the set of unique hashatgs in each tweet
+            # Append the new_edges to tweet_dict using the timestamp as key.
+            if newest_ts >= oldest_ts:
+                hashtags = []
+                tags = parsed_json["entities"]["hashtags"]
+                for hashtag in tags:
+                    hashtags.append (hashtag["text"])
+                hashtags = set (hashtags)
+                new_edges = []
+                for hashtag in hashtags:
+                    new_edges = list (combinations (hashtags, 2))
+                try:
+                    tweet_dict[newest_ts].extend (new_edges)
+                except:
+                    tweet_dict[newest_ts] = new_edges
+                # Remove the old hashtags in the hashtag graph;
+                # Sort tweet_dict in increasing order of timestamps;
+                # Remove the disconnected nodes in the graph and add the new_edges to the graph
+                tweet_graph.evict_old_hashtags ()
+                tweet_dict = OrderedDict (sorted (tweet_dict.items ()))
+                tweet_graph.remove_disconnected_nodes ()
+                if newest_ts - oldest_ts < 60:
+                    for edge in new_edges:
+                        tweet_graph.add_edge (edge)
+            # Finally append a formatted string of the average degree of the graph to an output string.
+            s += (tweet_graph.calc_avg_degree ()) + "\n"
+    return s
+
+def main ():
+    s = ""
+    newest_ts = None # The newest timestamp has the timestamp of the latest tweet to arrive.
 
     opfile = open(sys.argv[2], "w+")
-    newest_ts = None
-    # Reads input file and writes feauture 1 into output file as specified in cmd arguments
     if (isfile(sys.argv[1])):
         ipfile = open(sys.argv[1], "r")
     else:
         # Terminates if input file path is invalid
         print("Invalid input path: ", sys.argv[1])
         exit(0)
-    print ("TWEET INPUT: {0}, OUTPUT: {1}".format(sys.argv[1],sys.argv[2]))
-    tweetnum = 0
-    for line in ipfile:
-        parsed_json = loads(line)
-        if "entities" and "created_at" in parsed_json:
-            timestamp = parsed_json["created_at"]
-            newest_ts = (mktime(strptime(timestamp, "%a %b %d %H:%M:%S +0000 %Y")))
-            if oldest_ts == None:
-                oldest_ts = newest_ts
-            tweetnum+=1
-            #print ("tweet num: ",tweetnum,"oldest ts: ", oldest_ts,"newest ts: ", newest_ts, "newest - oldest: ", newest_ts - oldest_ts)
-            #if newest_ts - oldest_ts < 60:
-            if newest_ts >= oldest_ts:
-                hashtags = []
-                tags = parsed_json["entities"]["hashtags"]
-                for hashtag in tags:
-                    #text += hashtag["text"] + " "
-                    hashtags.append(hashtag["text"])
-                hashtags = set(hashtags)
-                new_edges = []
-                for hashtag in hashtags:
-                    new_edges = list(combinations(hashtags, 2))
-                try:
-                    tweet_dict[newest_ts].extend(new_edges)
-                except:
-                    tweet_dict[newest_ts] = new_edges
-                tweet_graph.evict_old_hashtags()
-                tweet_dict = OrderedDict(sorted(tweet_dict.items()))
-                tweet_graph.remove_disconnected_nodes()
-                if newest_ts - oldest_ts < 60:
-                    for edge in new_edges:
-                        tweet_graph.add_edge(edge)
-            #print (tweet_graph.print_graph(), "new edges: ", new_edges)
-            #print ("\tavg degree: ", tweet_graph.calc_avg_degree(), "\n", tweet_graph)
-            #print ("\n============================")
-            s += (tweet_graph.calc_avg_degree()) + "\n"
-
-            #print ("\n", tweet_graph.print_graph(), tweet_graph)
-            # print ("\n"+str(hashtags)+" "+timestamp+"\n============================")
-            # s += text + "\tcreated_at: " + timestamp + "\n"
-            # print (oldest_ts, newest_ts)
-            # print ("\t\tnew edges: " + str(new_edges))
-
-    print (s)
-    opfile.write(s)
-    # for k in tweet_dict:
-    # print (k, " ", tweet_dict[k])
-    #print (tweet_dict)
-    #print (tweet_graph)
-    #print (tweet_graph.generate_edges())
+    print ("TWEET INPUT: {0}, OUTPUT: {1}".format (sys.argv[1], sys.argv[2]))
+    # Call process_input_file and write the output string into the output file.
+    output_string = process_input_file(ipfile)
+    print (output_string)
+    opfile.write(output_string)
     ipfile.close()
     opfile.close()
 
