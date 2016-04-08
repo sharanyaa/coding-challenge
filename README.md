@@ -11,10 +11,20 @@ Libraries: Standard Python libraries (sys, path, json, itertools, collections, t
 src/average_degree.py:
 - A graph is built using the hashtags extracted from the tweets and average degree is calculated and written into the output file as each new tweet is processed.
 
-run.sh:
+run.sh:  (Change permissions of the script, if required, to allow execution)
 - Executes average_degree.py using input file and writes into output file
-- Change permissions of the script, if required, to allow execution
 - Run the script as ./run.sh from the root directory
+
+insight_testsuite:
+
+Contains tests for:
+1. Testing if two tweets with identical timestamps are correctly handled.
+2. Testing if the 60 second window is exclusive.
+3. Testing if hashtags in the graph are case sensitive.
+4. Testing if a missing "entities" label in the json is handled correctly.
+5. Testing if rate limit messages are ignored correctly.
+6. Testing if no edges or nodes are created by tweets with less than 2 hashtags.
+7. Testing if edges and nodes are only created by unique hashtags in a tweet.
 
 TO RUN average_degree.py: python3 src/average_degree.py INPUT_FILE_PATH OUTPUT_FILE_PATH
 
