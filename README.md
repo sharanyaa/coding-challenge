@@ -1,5 +1,23 @@
 Insight Data Engineering - Coding Challenge
 ===========================================================
+Submitted by: SHARANYA RADHAMOHAN
+===========================================================
+Email: radhamoh@usc.edu
+Language/Environment: Python 3
+Libraries: Standard Python libraries (sys, path, json, itertools, collections, time)
+
+src/average_degree.py:
+- A graph is built using the hashtags extracted from the tweets and average degree is calculated and written into the output file as each new tweet is processed.
+
+run.sh:
+- Executes average_degree.py using input file and writes into output file
+- Executes unittests_average_degree.py to run unittests on different units of the program
+- Change permissions of the script to allow execution
+- Run the script as ./run.sh from the root directory
+
+TO RUN average_degree.py: python3 src/average_degree.py INPUT_FILE_PATH OUTPUT_FILE_PATH
+
+**NOTE:** The python script takes around 5 seconds to process 9999 tweets on a mid 2010 Macbook Air with an i5 processor and 8GB memory.
 
 # Table of Contents
 1. [Challenge Summary](README.md#challenge-summary)
